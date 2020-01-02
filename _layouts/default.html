@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <!-- META -->
-        <title>{{ page.title | default: site.title }}</title>
+        <title>PAGE.TITLE</title>
         <meta name="description" content="PAGE.DESCRIPTION" />
         <meta name="keywords" content="TAGS" />
         <meta name="author" content="AUTHOR" />
-        <link rel="canonical" href="{{ page.url | remove ".html" }}" />
-        <link rel="image_src" href="{{ page.cover | default: site.shareImage }}" />
+        <link rel="canonical" href="PAGE.URL" />
+        <link rel="image_src" href="PAGE.COVER" />
 
         <!-- SCHEMA.ORG -->
-        <meta itemprop="name" content="{{ page.title | default: site.title }}" />
+        <meta itemprop="name" content="PAGE.TITLE" />
         <meta itemprop="description" content="PAGE.DESCRIPTION" />
-        <meta itemprop="image" content="{{ page.cover | default: site.shareImage }}" />
+        <meta itemprop="image" content="PAGE.COVER" />
 
         <!-- OPENGRAPH -->
         <meta property="og:site_name" content="{{ site.title }}" />
-        <meta property="og:title" content="{{ page.title | default: site.title }}" />
+        <meta property="og:title" content="PAGE.TITLE" />
         <meta property="og:url" content="{{ page.url | remove ".html" }}" />
         <meta property="og:locale" content="{{ site.locale }}" />
-        <meta property="og:image" content="{{ page.cover | default: site.shareImage }}" />
+        <meta property="og:image" content="PAGE.COVER" />
 
         <!-- TWITTER -->
-        <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+        <meta name="twitter:title" content="PAGE.TITLE" />
         <meta name="twitter:description" content="PAGE.DESCRIPTION" />
-        <meta name="twitter:card" content="{{ page.cover | default: site.shareImage }}" />
+        <meta name="twitter:card" content="PAGE.COVER" />
 
         <!-- VK -->
-        <meta property="vk:image" content="{{ page.cover | default: site.shareImage }}" />
+        <meta property="vk:image" content="PAGE.COVER" />
 
         <!-- ICONS -->
         <link rel="icon" type="image/png" sizes="16x16" href="" />
