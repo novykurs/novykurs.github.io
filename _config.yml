@@ -6,6 +6,15 @@ description: "Общественное издание"
 keywords: "новости, политика, общество, интервью, расследования, информация, события, факты, статья, экономика, заявление"
 locale: "en_US"
 
+# Images
+shareImage: "/assets/site/share.png"
+icon:
+  vector: "/assets/site/icon.svg"
+  raster:
+    path: "/assets/site/icon-"
+    suffix: ".png"
+    sizes: ["1024", "256"]
+
 # Paths
 permalink: /:categories/:day-:month-:year-:title:output_ext
 paginate_path: "/page/:num/"
