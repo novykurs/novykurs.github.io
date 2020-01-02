@@ -1,6 +1,3 @@
----
-wtf: "yas!"
----
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,32 +5,32 @@ wtf: "yas!"
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <!-- META -->
-        <title>PAGE.TITLE</title>
+        <title>{{ page.title | default: site.title }}</title>
         <meta name="description" content="PAGE.DESCRIPTION" />
         <meta name="keywords" content="TAGS" />
         <meta name="author" content="AUTHOR" />
-        <link rel="canonical" href="PAGE.URL" />
-        <link rel="image_src" href="PAGE.SHAREIMAGE" />
+        <link rel="canonical" href="{{ page.url | remove ".html" }}" />
+        <link rel="image_src" href="{{ page.cover | default: site.shareImage }}" />
 
         <!-- SCHEMA.ORG -->
-        <meta itemprop="name" content="PAGE.TITLE" />
+        <meta itemprop="name" content="{{ page.title | default: site.title }}" />
         <meta itemprop="description" content="PAGE.DESCRIPTION" />
-        <meta itemprop="image" content="PAGE.SHAREIMAGE" />
+        <meta itemprop="image" content="{{ page.cover | default: site.shareImage }}" />
 
         <!-- OPENGRAPH -->
-        <meta property="og:site_name" content="SITE.TITLE" />
-        <meta property="og:title" content="PAGE.TITLE" />
-        <meta property="og:url" content="PAGE.URL" />
-        <meta property="og:locale" content="SITE.LOCALE" />
-        <meta property="og:image" content="PAGE.SHAREIMAGE" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:title" content="{{ page.title | default: site.title }}" />
+        <meta property="og:url" content="{{ page.url | remove ".html" }}" />
+        <meta property="og:locale" content="{{ site.locale }}" />
+        <meta property="og:image" content="{{ page.cover | default: site.shareImage }}" />
 
         <!-- TWITTER -->
-        <meta name="twitter:title" content="PAGE.TITLE" />
+        <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
         <meta name="twitter:description" content="PAGE.DESCRIPTION" />
-        <meta name="twitter:card" content="PAGE.SHAREIMAGE" />
+        <meta name="twitter:card" content="{{ page.cover | default: site.shareImage }}" />
 
         <!-- VK -->
-        <meta property="vk:image" content="PAGE.SHAREIMAGE" />
+        <meta property="vk:image" content="{{ page.cover | default: site.shareImage }}" />
 
         <!-- ICONS -->
         <link rel="icon" type="image/png" sizes="16x16" href="" />
@@ -43,7 +40,6 @@ wtf: "yas!"
     </head>
     <body>
       <h1>{{ site.title }}</h1>
-      {{ wtf }}<hr>
       {{ content }}
     </body>
 </html>
