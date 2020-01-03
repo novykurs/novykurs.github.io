@@ -10,32 +10,33 @@
         <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
         <meta name="author" content="{{ site.title }}" />
         <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-        <link rel="image_src" href="PAGE.COVER" />
+        <link rel="image_src" href="{{ site.url }}{{ page.cover | default: site.cover }}" />
 
         <!-- SCHEMA.ORG -->
         <meta itemprop="name" content="{{ page.title | default: site.title }}" />
         <meta itemprop="description" content="{{ page.description | default: site.description }}" />
-        <meta itemprop="image" content="PAGE.COVER" />
+        <meta itemprop="image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
 
         <!-- OPENGRAPH -->
         <meta property="og:site_name" content="{{ site.title }}" />
         <meta property="og:title" content="{{ page.title | default: site.title }}" />
         <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
         <meta property="og:locale" content="{{ site.locale }}" />
-        <meta property="og:image" content="PAGE.COVER" />
+        <meta property="og:image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
 
         <!-- TWITTER -->
         <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
         <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
-        <meta name="twitter:card" content="PAGE.COVER" />
+        <meta name="twitter:card" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
 
         <!-- VK -->
-        <meta property="vk:image" content="PAGE.COVER" />
+        <meta property="vk:image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
 
         <!-- ICONS -->
-        <link rel="icon" type="image/png" sizes="16x16" href="" />
-        <link rel="apple-touch-icon" href="" />
-        <link rel="mask-icon" href="" color="B88B58" />
+        {% if site.icon != nil %}{% if site.icon.raster != nil %}{% for size in site.icon.raster.sizes %}
+        <link rel="icon" type="image/png" sizes="{{ size }}x{{ size }}" href="{{ site.url }}{{ site.icon.raster.path }}{{ size }}{{ site.icon.raster.suffix }}" />
+        {% endfor %}<link rel="apple-touch-icon" href="{{ site.url }}{{ site.icon.raster.path }}{{ site.icon.raster.sizes[0] }}{{ site.icon.raster.suffix }}" />{% endif %}
+        {% if site.icon.raster != nil %}<link rel="mask-icon" href="{{ site.url }}{{ site.icon.vector }}" />{% endif %}{% endif %}
 
     </head>
     <body>
