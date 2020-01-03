@@ -1,6 +1,3 @@
----
-varr: "vall"
----
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,27 +5,27 @@ varr: "vall"
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         
         <!-- META -->
-        <title>{{ page.title | default: site.title }}</title>
+        <title>{% if page.title != nil %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
         <meta name="description" content="{{ page.description | default: site.description }}" />
-        <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
+        <meta name="keywords" content="{% if page.keywords != nil %}{{ page.keywords }}, {% endif %}{{ default: site.keywords }}" />
         <meta name="author" content="{{ site.title }}" />
         <link rel="canonical" href="{{ page.url | remove: '.html' | prepend: site.baseurl | prepend: site.url }}" />
         <link rel="image_src" href="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- SCHEMA.ORG -->
-        <meta itemprop="name" content="{{ page.title | default: site.title }}" />
+        <meta itemprop="name" content="{% if page.title != nil %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}" />
         <meta itemprop="description" content="{{ page.description | default: site.description }}" />
         <meta itemprop="image" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- OPENGRAPH -->
         <meta property="og:site_name" content="{{ site.title }}" />
-        <meta property="og:title" content="{{ page.title | default: site.title }}" />
+        <meta property="og:title" content="{% if page.title != nil %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}" />
         <meta property="og:url" content="{{ page.url | remove: '.html' | prepend: site.baseurl | prepend: site.url }}" />
         <meta property="og:locale" content="{{ site.locale }}" />
         <meta property="og:image" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- TWITTER -->
-        <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+        <meta name="twitter:title" content="{% if page.title != nil %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}" />
         <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
         <meta name="twitter:card" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
@@ -42,7 +39,7 @@ varr: "vall"
         {% if site.icon.raster != nil %}<link rel="mask-icon" href="{{ site.icon.vector }}" />{% endif %}{% endif %}
 
     </head>
-    <body>varr {{ varr }} page.varr {{ page.varr }}
+    <body>
       <h1>{{ site.title }}</h1>
       {{ content }}
     </body>
