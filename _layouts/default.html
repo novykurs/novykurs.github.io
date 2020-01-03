@@ -3,6 +3,39 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        
+        <!-- META -->
+        <title>PAGE.TITLE</title>
+        <meta name="description" content="PAGE.DESCRIPTION" />
+        <meta name="keywords" content="TAGS" />
+        <meta name="author" content="AUTHOR" />
+        <link rel="canonical" href="PAGE.URL" />
+        <link rel="image_src" href="PAGE.COVER" />
+
+        <!-- SCHEMA.ORG -->
+        <meta itemprop="name" content="PAGE.TITLE" />
+        <meta itemprop="description" content="PAGE.DESCRIPTION" />
+        <meta itemprop="image" content="PAGE.COVER" />
+
+        <!-- OPENGRAPH -->
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:title" content="PAGE.TITLE" />
+        <meta property="og:url" content="{{ page.url | remove ".html" }}" />
+        <meta property="og:locale" content="{{ site.locale }}" />
+        <meta property="og:image" content="PAGE.COVER" />
+
+        <!-- TWITTER -->
+        <meta name="twitter:title" content="PAGE.TITLE" />
+        <meta name="twitter:description" content="PAGE.DESCRIPTION" />
+        <meta name="twitter:card" content="PAGE.COVER" />
+
+        <!-- VK -->
+        <meta property="vk:image" content="PAGE.COVER" />
+
+        <!-- ICONS -->
+        <link rel="icon" type="image/png" sizes="16x16" href="" />
+        <link rel="apple-touch-icon" href="" />
+        <link rel="mask-icon" href="" color="B88B58" />
 
     </head>
     <body>
