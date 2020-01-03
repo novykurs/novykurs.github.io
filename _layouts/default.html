@@ -34,8 +34,8 @@
 
         <!-- ICONS -->
         {% if site.icon != nil %}{% if site.icon.raster != nil %}{% for size in site.icon.raster.sizes %}
-        <link rel="icon" type="image/png" sizes="{{ size }}x{{ size }}" href="{{ site.url }}{{ site.icon.raster.path }}{{ size }}{{ site.icon.raster.suffix }}" />
-        {% endfor %}<link rel="apple-touch-icon" href="{{ site.url }}{{ site.icon.raster.path }}{{ site.icon.raster.sizes[0] }}{{ site.icon.raster.suffix }}" />{% endif %}
+        <link rel="icon" type="image/png" sizes="{{ size }}x{{ size }}" href="{{ site.url }}{{ site.icon.raster.path }}{{ size }}{{ site.icon.raster.suffix }}" />{% endfor %}
+        <link rel="apple-touch-icon" href="{{ site.url }}{{ site.icon.raster.path }}{{ site.icon.raster.sizes[0] }}{{ site.icon.raster.suffix }}" />{% endif %}
         {% if site.icon.raster != nil %}<link rel="mask-icon" href="{{ site.url }}{{ site.icon.vector }}" />{% endif %}{% endif %}
 
     </head>
