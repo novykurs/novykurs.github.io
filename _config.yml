@@ -7,7 +7,7 @@ keywords: "новости, политика, общество, интервью,
 locale: "en_US"
 
 # Images
-shareImage: "/assets/site/share.png"
+cover: "/assets/site/share.png"
 icon:
   vector: "/assets/site/icon.svg"
   raster:
