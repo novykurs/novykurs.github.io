@@ -9,34 +9,34 @@
         <meta name="description" content="{{ page.description | default: site.description }}" />
         <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
         <meta name="author" content="{{ site.title }}" />
-        <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-        <link rel="image_src" href="{{ site.url }}{{ page.cover | default: site.cover }}" />
+        <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
+        <link rel="image_src" href="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- SCHEMA.ORG -->
         <meta itemprop="name" content="{{ page.title | default: site.title }}" />
         <meta itemprop="description" content="{{ page.description | default: site.description }}" />
-        <meta itemprop="image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
+        <meta itemprop="image" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- OPENGRAPH -->
         <meta property="og:site_name" content="{{ site.title }}" />
         <meta property="og:title" content="{{ page.title | default: site.title }}" />
-        <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+        <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
         <meta property="og:locale" content="{{ site.locale }}" />
-        <meta property="og:image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
+        <meta property="og:image" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- TWITTER -->
         <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
         <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
-        <meta name="twitter:card" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
+        <meta name="twitter:card" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- VK -->
-        <meta property="vk:image" content="{{ site.url }}{{ page.cover | default: site.cover }}" />
+        <meta property="vk:image" content="{{ page.cover | default: site.cover | prepend: site.baseurl | prepend: site.url }}" />
 
         <!-- ICONS -->
         {% if site.icon != nil %}{% if site.icon.raster != nil %}{% for size in site.icon.raster.sizes %}
-        <link rel="icon" type="image/png" sizes="{{ size }}x{{ size }}" href="{{ site.url }}{{ site.icon.raster.path }}{{ size }}{{ site.icon.raster.suffix }}" />{% endfor %}
-        <link rel="apple-touch-icon" href="{{ site.url }}{{ site.icon.raster.path }}{{ site.icon.raster.sizes[0] }}{{ site.icon.raster.suffix }}" />{% endif %}
-        {% if site.icon.raster != nil %}<link rel="mask-icon" href="{{ site.url }}{{ site.icon.vector }}" />{% endif %}{% endif %}
+        <link rel="icon" type="image/png" sizes="{{ size }}x{{ size }}" href="{{ site.icon.raster.path }}{{ size }}{{ site.icon.raster.suffix }}" />{% endfor %}
+        <link rel="apple-touch-icon" href="{{ site.icon.raster.path }}{{ site.icon.raster.sizes[0] }}{{ site.icon.raster.suffix }}" />{% endif %}
+        {% if site.icon.raster != nil %}<link rel="mask-icon" href="{{ site.icon.vector }}" />{% endif %}{% endif %}
 
     </head>
     <body>
