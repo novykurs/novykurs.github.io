@@ -1,4 +1,11 @@
 ---
 layout: default
 ---
-HOMEPAGE!
+HOMEPAGE!<br>
+
+<h5>POSTS:</h5>
+<ul>
+{% for post in site.posts %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
